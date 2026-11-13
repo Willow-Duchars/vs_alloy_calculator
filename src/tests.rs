@@ -1,12 +1,13 @@
 #[cfg(test)]
 mod base_metal_tests {
-    use crate::{base_metal_names::COPPER, prelude::*};
+    use crate::{ConstituentRange, base_metal_names::COPPER, prelude::*};
 
     #[test]
     fn test_default() {
-        let default_basemetal: BaseMetal<f64> = BaseMetal::default();
+        let default_basemetal: BaseMetal<ConstituentRange<f64>> = BaseMetal::default();
         assert_eq!(COPPER, default_basemetal.name());
-        assert_eq!(0.0, *default_basemetal)
+        assert_eq!(0.0, default_basemetal.min);
+        assert_eq!(0.0, default_basemetal.max);
     }
 }
 

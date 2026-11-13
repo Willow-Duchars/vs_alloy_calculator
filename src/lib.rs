@@ -92,3 +92,12 @@ impl<T: Copy + PartialOrd> ConstituentRange<T> {
     }
 }
 type Range = ConstituentRange<f64>;
+
+impl<T: Copy + PartialOrd + Default> Default for ConstituentRange<T> {
+    fn default() -> Self {
+        Self {
+            min: Default::default(),
+            max: Default::default(),
+        }
+    }
+}
