@@ -1,4 +1,16 @@
 #[cfg(test)]
+mod base_metal_tests {
+    use crate::{base_metal_names::COPPER, prelude::*};
+
+    #[test]
+    fn test_default() {
+        let default_basemetal: BaseMetal<f64> = BaseMetal::default();
+        assert_eq!(COPPER, default_basemetal.name());
+        assert_eq!(0.0, *default_basemetal)
+    }
+}
+
+#[cfg(test)]
 mod tin_bronze_tests {
     use crate::AlloyError::*;
     use crate::prelude::*;

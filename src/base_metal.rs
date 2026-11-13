@@ -113,3 +113,9 @@ impl<T: Copy> std::ops::Deref for BaseMetal<T> {
         }
     }
 }
+
+impl<T: Copy + Default> Default for BaseMetal<T> {
+    fn default() -> Self {
+        Copper(T::default())
+    }
+}

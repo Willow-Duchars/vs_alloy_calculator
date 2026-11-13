@@ -327,7 +327,7 @@ impl<T: AlloyType> AlloyData<T> {
         }
     }
 
-    fn check_constituent_amounts(amounts: &mut Vec<i32>, num_ingots: i32) {
+    fn check_constituent_amounts(amounts: &mut [i32], num_ingots: i32) {
         use unit_constants::*;
 
         let two_constituents = amounts.len() == 2;
