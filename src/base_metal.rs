@@ -80,10 +80,10 @@ impl<T: Copy> BaseMetal<T> {
     /// let copper: BaseMetal<i32> = Copper(5);
     /// assert_eq!(5, *copper);
     ///
-    /// let copper: BaseMetal<f64> = copper.update_inner_value(10.0);
+    /// let copper: BaseMetal<f64> = copper.clone_with_new_value(10.0);
     /// assert_eq!(10.0, *copper);
     /// ```
-    pub fn update_inner_value<U: Copy>(&self, value: U) -> BaseMetal<U> {
+    pub fn clone_with_new_value<U: Copy>(&self, value: U) -> BaseMetal<U> {
         match self {
             Nickel(_) => Nickel(value),
             Copper(_) => Copper(value),
